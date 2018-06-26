@@ -3,3 +3,18 @@ $banana: #fac863;
 .🍌 {
   background-color: $banana;
 }
+
+.container {
+}
+
+.card {
+  background-color: #c8fbb0;
+  margin: 0.5rem 2rem;
+  padding: 1rem 3rem;
+  p {
+    color: #404040;
+  }
+  h2{
+    color: #ff4a4a;
+  }
+}

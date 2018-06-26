@@ -8,6 +8,3 @@ searchButton.addEventListener("click", async function() {
   matches = await responseObject.json();
   console.log(matches);
 });
-
-
-

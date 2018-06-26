@@ -29,5 +29,4 @@ searchButton.addEventListener("click", async function() {
     `;
   };
   return htmlString;
-} 
-
+}

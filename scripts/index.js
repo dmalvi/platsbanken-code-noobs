@@ -9,8 +9,13 @@ searchButton.addEventListener("click", async function() {
   let matches = await responseObject.json();
   let matchningdata = matches.matchningslista.matchningdata;
   let printString = getHtmlString(matchningdata);
-  console.log(printString);
+  printJobs(printString); 
   });
+
+  function printJobs(string) {
+    const printDiv = document.querySelector("#print");
+    printDiv.insertAdjacentHTML("beforeend", string);
+  }
 
 
   function getHtmlString(data){

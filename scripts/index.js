@@ -17,7 +17,6 @@ searchButton.addEventListener("click", async function() {
     printDiv.insertAdjacentHTML("beforeend", string);
   }
 
-
   function getHtmlString(data){
   let htmlString = "";
   for(let post of data){

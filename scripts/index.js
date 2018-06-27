@@ -5,8 +5,21 @@ const sthlmButton = document.querySelector("#stockholm");
 const gbgButton = document.querySelector("#goteborg");
 const uppsalaButton = document.querySelector("#uppsala");
 const malmoButton = document.querySelector("#malmo");
+const printDiv = document.querySelector("#print");
 
 searchButton.addEventListener("click", async function() {
+  printDiv.innerHTML = "";
+  if (sthlmButton.checked) {
+    searchCriteria = "platsannonser/matchning?lanid=1&yrkesomradeid=3&antalrader=30";
+  } else if (uppsalaButton.checked) {
+    searchCriteria = "platsannonser/matchning?lanid=3&yrkesomradeid=3&antalrader=30";
+  } else if (gbgButton.checked) {
+    searchCriteria = "platsannonser/matchning?lanid=14&yrkesomradeid=3&antalrader=30";
+  } else if (malmoButton.checked) {
+    searchCriteria = "platsannonser/matchning?lanid=12&yrkesomradeid=3&antalrader=30";
+  } else {
+    searchCriteria = "platsannonser/matchning?yrkesomradeid=3&antalrader=80";
+  }
   const baseURL = 'http://api.arbetsformedlingen.se/af/v0/';
   const responseObject = await fetch(baseURL + searchCriteria);
   let matches = await responseObject.json();
@@ -16,7 +29,6 @@ searchButton.addEventListener("click", async function() {
   });
 
   function printJobs(string) {
-    const printDiv = document.querySelector("#print");
     printDiv.insertAdjacentHTML("beforeend", string);
   }
 

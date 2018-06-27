@@ -1,37 +1,56 @@
 $bgcolor: #c8fbb0;
+$textcolor: #262626;
+
+* {
+  /* inkluderar border och padding i bredden */
+  box-sizing: border-box;
+}
 
 body {
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 font-family: "Trebuchet MS", Helvetica, sans-serif;
-.searchButton {
-background-color: #c8fbb0;
-padding: 0.4rem 1rem;
-}
+color: $textcolor;
 }
 
-header {
-  // width: 80%;
-  justify-content: center;
-  // background-color: aqua;
+.searchButton {
+background-color: white;
+padding: 0.4rem 1rem;
+margin: 0.8rem 0.4rem;
+border-radius: 6px;
+
+}
+
+.header {
+  // background-color: aliceblue;
+  width:100%;
+  margin-top: -1.3rem;
+  padding: 1rem;
+}
+
+.form {
+  flex-flow: row;
+}
+
+input {
+  margin: 0.6rem;
 }
 
 .container {
+  width: 80%;
+  padding: 0;
+  margin: 0;
 }
 
+p {
+margin: 0.3rem }
+
 .card {
-  background-color: #c8fbb0;
-  margin: 0.6rem 2rem;
-  padding: 1rem 2rem;
+  flex: 0 0 80%;
+  background-color: $bgcolor;
+  margin: 1rem 0rem;
+  padding: 0.5rem 2rem;
   border-radius: 6px;
   box-shadow: 2px 2px 20px darkgrey;
-
-
-  p {
-    color: #404040;
-  }
-  h2{
-    color: #ff4a4a;
-  }
 }

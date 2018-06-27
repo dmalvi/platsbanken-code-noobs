@@ -1,7 +1,10 @@
 
 const searchButton = document.querySelector(".searchButton");
 let searchCriteria = "platsannonser/matchning?lanid=3&yrkesomradeid=3&antalrader=30";
-
+const sthlmButton = document.querySelector("#stockholm");
+const gbgButton = document.querySelector("#goteborg");
+const uppsalaButton = document.querySelector("#uppsala");
+const malmoButton = document.querySelector("#malmo");
 
 searchButton.addEventListener("click", async function() {
   const baseURL = 'http://api.arbetsformedlingen.se/af/v0/';

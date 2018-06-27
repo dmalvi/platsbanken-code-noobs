@@ -1,7 +1,20 @@
-$banana: #fac863;
+$bgcolor: #c8fbb0;
 
-.🍌 {
-  background-color: $banana;
+body {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+.searchButton {
+background-color: #c8fbb0;
+padding: 0.4rem 1rem;
+}
+}
+
+header {
+  // width: 80%;
+  justify-content: center;
+  // background-color: aqua;
 }
 
 .container {
@@ -9,8 +22,12 @@ $banana: #fac863;
 
 .card {
   background-color: #c8fbb0;
-  margin: 0.5rem 2rem;
-  padding: 1rem 3rem;
+  margin: 0.6rem 2rem;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 20px darkgrey;
+
+
   p {
     color: #404040;
   }

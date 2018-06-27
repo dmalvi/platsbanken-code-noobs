@@ -42,6 +42,9 @@ nextButton.addEventListener("click",async function(){
   printJobs(printString);
 });
 
+<<<<<<< HEAD
+  function getHtmlString(data){
+=======
 //prints out HTMLstring on the page
 function printJobs(string) {
   printDiv.insertAdjacentHTML("beforeend", string);
@@ -49,6 +52,7 @@ function printJobs(string) {
 
 //what to print out
 function getHtmlString(data){
+>>>>>>> eea13da0b7879891c5701b77aa1053e449a5bd1a
   let htmlString = "";
   for(let post of data){
     htmlString +=`

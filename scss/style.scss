@@ -14,12 +14,16 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
 color: $textcolor;
 }
 
-.searchButton {
+button {
 background-color: white;
 padding: 0.4rem 1rem;
 margin: 0.8rem 0.4rem;
 border-radius: 6px;
 
+}
+
+.giveMeMooore{
+  padding: 1rem;
 }
 
 .header {

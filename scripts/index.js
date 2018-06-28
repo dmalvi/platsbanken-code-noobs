@@ -1,30 +1,30 @@
 
 const searchButton = document.querySelector(".searchButton");
-let searchCriteria = "platsannonser/matchning?lanid=3&yrkesomradeid=3&antalrader=30&sida=";
 const printDiv = document.querySelector("#print");
 const nextButton = document.querySelector(".next");
 const result = document.querySelector(".result");
 let pageNumber = 1;
 const baseURL = 'http://api.arbetsformedlingen.se/af/v0/';
-
-/*Ellis workspace*/ 
-
 let form = document.querySelector(".form");
-searchCriteria = `platsannonser/matchning?lanid=3&yrkesomradeid=3&antalrader=30&sida=`;
+let vocation = document.querySelector("#vocation");
+let area = document.querySelector("#area");
+let numberOfPages = document.querySelector("#pages");
 
-function fetchURL() {
+
+//Makes a fetch 
+async function fetchURL() {
+  let searchCriteria = `platsannonser/matchning?lanid=${area.value}&yrkesomradeid=${vocation.value}&antalrader=${numberOfPages.value}`;
   const responseObject = await fetch(baseURL + searchCriteria + pageNumber);
   let matches = await responseObject.json();
   return matches;
-}
-
-/*Ellis workspace*/ 
-
+} 
 
 // function for when you push SÖK
-form.addEventListener("submit", async function() {
+form.addEventListener("submit", async function(event) {
+  event.preventDefault();
   printDiv.innerHTML = "";  
-  let matches = fetchURL();
+  let matches = await fetchURL();
+  console.log(matches);
   let matchningdata = matches.matchningslista.matchningdata;
   let printString = getHtmlString(matchningdata);
   printJobs(printString);
@@ -34,8 +34,6 @@ form.addEventListener("submit", async function() {
   result.insertAdjacentHTML("afterbegin", "Antal annonser: " + antalAnnonser + " st");
 });
 
-// 10, 34,35,36 index.html 83
-
 // funtion for reveal LADDA FLER button
 function revealNextButton(){
   nextButton.classList.remove("hide");
@@ -43,10 +41,9 @@ function revealNextButton(){
 
 // function for when you push LADDA FLER
 nextButton.addEventListener("click",async function(){
+  event.preventDefault();
   pageNumber = pageNumber + 1;
-  searchCriteria = "platsannonser/matchning?yrkesomradeid=3&antalrader=30&sida=";
-  const responseObject = await fetch(baseURL + searchCriteria + pageNumber);
-  let matches = await responseObject.json();
+  let matches = await fetchURL();
   let matchningdata = matches.matchningslista.matchningdata;
   let printString = getHtmlString(matchningdata);
   printJobs(printString);

@@ -29,7 +29,14 @@ searchButton.addEventListener("click", async function() {
   let matchningdata = matches.matchningslista.matchningdata;
   let printString = getHtmlString(matchningdata);
   printJobs(printString);
+  revealNextButton();
 });
+
+// funtion for reveal LADDA FLER button
+function revealNextButton(){
+  nextButton.classList.remove("hide");
+
+}
 
 // function for when you push LADDA FLER
 nextButton.addEventListener("click",async function(){

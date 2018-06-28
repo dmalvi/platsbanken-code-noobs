@@ -7,6 +7,7 @@ const uppsalaButton = document.querySelector("#uppsala");
 const malmoButton = document.querySelector("#malmo");
 const printDiv = document.querySelector("#print");
 const nextButton = document.querySelector(".next");
+const result = document.querySelector(".result");
 let pageNumber = 1;
 const baseURL = 'http://api.arbetsformedlingen.se/af/v0/';
 
@@ -30,12 +31,16 @@ searchButton.addEventListener("click", async function() {
   let printString = getHtmlString(matchningdata);
   printJobs(printString);
   revealNextButton();
+  let antalAnnonser = matches.matchningslista.antal_platsannonser;
+  result.innerHTML="";
+  result.insertAdjacentHTML("afterbegin", "Antal annonser: " + antalAnnonser + " st");
 });
+
+// 10, 34,35,36 index.html 83
 
 // funtion for reveal LADDA FLER button
 function revealNextButton(){
   nextButton.classList.remove("hide");
-
 }
 
 // function for when you push LADDA FLER

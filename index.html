@@ -14,9 +14,8 @@
   <div class="container">
       <header class="header">
         <h1>Sök jobb</h1>
-        <form class="form">
+        <form action class="form">
           <select id="vocation">
-            <option value="">Välj yrkesområde</option>
             <option value="1">Administration, ekonomi, juridik</option>
             <option value="2">Bygg och anläggning</option>
             <option value="20">Chefer och verksamhetsledare</option>
@@ -41,7 +40,6 @@
 
           </select>
           <select id="area">
-              <option value="">Välj län</option>
               <option value="10">Blekinge</option>
               <option value="20">Dalarna</option>
               <option value="9">Gotland</option>
@@ -66,7 +64,6 @@
           </select>
 
           <select id="pages">
-            <option value="10">Välj antal</option>
             <option value="10">10</option>
             <option value="20">20</option>
             <option value="50">50</option>
@@ -75,8 +72,6 @@
 
           <input type="submit" class="searchButton">
         </form>
-
-        <button class="searchButton">Sök</button>
         <div class="result"> </div>
 
       </header>

@@ -64,9 +64,17 @@ function getHtmlString(data){
     <h2>${post.annonsrubrik}</h2>
     <p>${post.yrkesbenamning}</p>
     <p>${post.arbetsplatsnamn}</p>
-    <a href="${post.annonsurl}" target="_blank">Läs mer</a>
+    <a href="${post.annonsurl}" class="popUpButton">Läs mer</a>
     </div>
     `;
   };
   return htmlString;
 }
+let popUpButton=document.querySelector(".popUpButton");
+let popUp=document.querySelector(".popUp"):
+
+
+popUpButton.addEventListener("click",function(){
+popUp.style.display="block";
+popUp.insertAdjacentHTML("beforeend",${post.annonsurl})
+})

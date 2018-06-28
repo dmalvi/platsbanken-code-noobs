@@ -1,32 +1,30 @@
 
 const searchButton = document.querySelector(".searchButton");
 let searchCriteria = "platsannonser/matchning?lanid=3&yrkesomradeid=3&antalrader=30&sida=";
-const sthlmButton = document.querySelector("#stockholm");
-const gbgButton = document.querySelector("#goteborg");
-const uppsalaButton = document.querySelector("#uppsala");
-const malmoButton = document.querySelector("#malmo");
 const printDiv = document.querySelector("#print");
 const nextButton = document.querySelector(".next");
 const result = document.querySelector(".result");
 let pageNumber = 1;
 const baseURL = 'http://api.arbetsformedlingen.se/af/v0/';
 
-// function for when you push SÖK
-searchButton.addEventListener("click", async function() {
-  printDiv.innerHTML = "";
-  if (sthlmButton.checked) {
-    searchCriteria = "platsannonser/matchning?lanid=1&yrkesomradeid=3&antalrader=30&sida=";
-  } else if (uppsalaButton.checked) {
-    searchCriteria = "platsannonser/matchning?lanid=3&yrkesomradeid=3&antalrader=30&sida=";
-  } else if (gbgButton.checked) {
-    searchCriteria = "platsannonser/matchning?lanid=14&yrkesomradeid=3&antalrader=30&sida=";
-  } else if (malmoButton.checked) {
-    searchCriteria = "platsannonser/matchning?lanid=12&yrkesomradeid=3&antalrader=30&sida=";
-  } else {
-    searchCriteria = "platsannonser/matchning?yrkesomradeid=3&antalrader=30&sida=";
-  }
+/*Ellis workspace*/ 
+
+let form = document.querySelector(".form");
+searchCriteria = `platsannonser/matchning?lanid=3&yrkesomradeid=3&antalrader=30&sida=`;
+
+function fetchURL() {
   const responseObject = await fetch(baseURL + searchCriteria + pageNumber);
   let matches = await responseObject.json();
+  return matches;
+}
+
+/*Ellis workspace*/ 
+
+
+// function for when you push SÖK
+form.addEventListener("submit", async function() {
+  printDiv.innerHTML = "";  
+  let matches = fetchURL();
   let matchningdata = matches.matchningslista.matchningdata;
   let printString = getHtmlString(matchningdata);
   printJobs(printString);

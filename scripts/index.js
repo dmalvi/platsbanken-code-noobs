@@ -1,3 +1,6 @@
+import '../scss/style.scss';
+import '../scss/normalize.scss';
+
 
 const searchButton = document.querySelector(".searchButton");
 const printDiv = document.querySelector("#print");
@@ -11,18 +14,18 @@ let area = document.querySelector("#area");
 let numberOfPages = document.querySelector("#pages");
 
 
-//Makes a fetch 
+//Makes a request
 async function fetchURL() {
   let searchCriteria = `platsannonser/matchning?lanid=${area.value}&yrkesomradeid=${vocation.value}&antalrader=${numberOfPages.value}`;
-  const responseObject = await fetch(baseURL + searchCriteria + pageNumber);
+  const responseObject = await fetch(baseURL + searchCriteria + "&sida=" +pageNumber);
   let matches = await responseObject.json();
   return matches;
-} 
+}
 
 // function for when you push SÖK
 form.addEventListener("submit", async function(event) {
   event.preventDefault();
-  printDiv.innerHTML = "";  
+  printDiv.innerHTML = "";
   let matches = await fetchURL();
   console.log(matches);
   let matchningdata = matches.matchningslista.matchningdata;
@@ -54,6 +57,13 @@ function printJobs(string) {
   printDiv.insertAdjacentHTML("beforeend", string);
 }
 
+// let popUpButton = document.querySelector(".popUpButton");
+// let popUp = document.querySelector(".popUp");
+
+// popUpButton.addEventListener("click",function(){
+// popUp.classList.remove("hide");
+// });
+
 //what to print out
 function getHtmlString(data){
   let htmlString = "";
@@ -64,17 +74,8 @@ function getHtmlString(data){
     <h2>${post.annonsrubrik}</h2>
     <p>${post.yrkesbenamning}</p>
     <p>${post.arbetsplatsnamn}</p>
-    <a href="${post.annonsurl}" class="popUpButton">Läs mer</a>
-    </div>
-    `;
-  };
-  return htmlString;
-}
-let popUpButton=document.querySelector(".popUpButton");
-let popUp=document.querySelector(".popUp"):
-
-
-popUpButton.addEventListener("click",function(){
-popUp.style.display="block";
-popUp.insertAdjacentHTML("beforeend",${post.annonsurl})
-})
+    <a href="${post.annonsurl}" class="popUpButton" target="_blank">Läs mer</a>
+    </div>`
+    };
+    return htmlString;
+  }

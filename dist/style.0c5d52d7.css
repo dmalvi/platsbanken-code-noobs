@@ -1,0 +1,103 @@
+/* line 4, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+* {
+  /* inkluderar border och padding i bredden */
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: #262626;
+}
+
+/* line 18, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.searchButton, .next {
+  background-color: white;
+  padding: 0.4rem 1rem;
+  margin: 0.8rem 0rem;
+  border-radius: 6px;
+}
+
+/* line 25, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.giveMeMooore {
+  padding: 1rem;
+}
+
+/* line 29, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+h1 {
+  color: white;
+}
+
+/* line 32, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.header {
+  background-image: url(https://images.pexels.com/photos/5865/healthy-spring-young-green-5865.jpg?cs=srgb&dl=blade-blooming-blossom-5865.jpg&fm=jpg);
+  background-size: cover;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 20px darkgreen;
+}
+
+/* line 43, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.form {
+  flex-flow: row;
+}
+
+/* line 47, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+input {
+  margin: 0.6rem;
+}
+
+/* line 51, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.container {
+  width: 80%;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 57, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+p, a {
+  margin: 0.3rem;
+}
+
+/* line 60, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.card {
+  flex: 0 0 80%;
+  background-color: #c8fbb0;
+  margin: 1rem 0rem;
+  padding: 0.5rem 2rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 20px darkgrey;
+}
+
+/* line 69, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.hide {
+  display: none;
+}
+
+/* line 73, /Users/Air/Desktop/academy_local/projects/platsbanken-code-noobs/scss/style.scss */
+.popUp {
+  /* display: none; */
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 10;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 300;
+  top: 300;
+  width: 500px;
+  /* Full width */
+  height: 300px;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: greenyellow;
+}
+
+/*# sourceMappingURL=../css/style.map */

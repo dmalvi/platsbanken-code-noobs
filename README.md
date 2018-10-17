@@ -1,10 +1,15 @@
+terminal:
+parcel index.html
+go to localhost:1234
+
+
 # Platsbanken
 
 ## Uppgift
-Ni ska skapa en webbapplikation som använder sig utav _Arbetsförmedlingens API_ för att hämta de senaste annonserna för en viss yrkesgrupp eller ett viss område. 
+Ni ska skapa en webbapplikation som använder sig utav _Arbetsförmedlingens API_ för att hämta de senaste annonserna för en viss yrkesgrupp eller ett viss område.
 
 ## Mål
-Hantera öppna APIer och asynkronitet i JavaScript med hjälp av AJAX. Vidare är målet att lära er att jobba effektivt med _git_ samt _GitHub_ i grupp. Ni ska också använda er utav **sass** för att kunna skriva mer lätthanterlig CSS. **Det är viktigare att ni har lättläst och välstruktured kod än att alla egenskaper finns tillgängliga**. 
+Hantera öppna APIer och asynkronitet i JavaScript med hjälp av AJAX. Vidare är målet att lära er att jobba effektivt med _git_ samt _GitHub_ i grupp. Ni ska också använda er utav **sass** för att kunna skriva mer lätthanterlig CSS. **Det är viktigare att ni har lättläst och välstruktured kod än att alla egenskaper finns tillgängliga**.
 
 ## Arbetsmetod
 
@@ -18,7 +23,7 @@ Hantera öppna APIer och asynkronitet i JavaScript med hjälp av AJAX. Vidare ä
 
 ## Installation
 
-1. **En i gruppen** klonar ner detta repository för att få en mall för vad som ska finnas i projektet. 
+1. **En i gruppen** klonar ner detta repository för att få en mall för vad som ska finnas i projektet.
 2. Den som klonat ner projektet tar bort `.git`-mappen från projektet:
 ```
 rm -rf .git
@@ -35,7 +40,7 @@ git commit -m "Init repo"
 
 ## Information om API
 
-Ni ska använda er utav _Arbetsförmedlingens_ öppna API. All information om de anrop som ni kan göra till detta API finns på följande länk: 
+Ni ska använda er utav _Arbetsförmedlingens_ öppna API. All information om de anrop som ni kan göra till detta API finns på följande länk:
 
 * **http://jobtechdev.se/swagger**
 
@@ -96,8 +101,8 @@ Ett svar från detta API kan se ut så här där det är `matchningsdata` som ä
 
 
 ### **Egenskap**: _Anpassad listning_
-  
-> För att göra appen mer användbar behöver användaren kunna anpassa listningen efter behov. 
+
+> För att göra appen mer användbar behöver användaren kunna anpassa listningen efter behov.
 
 ---
 
@@ -119,7 +124,7 @@ Exempel:
 
 ---
 
-**Scenariomall**: Möjlighet att välja län 
+**Scenariomall**: Möjlighet att välja län
 
 **Givet**: att en arbetssökande besöker startsidan
 
